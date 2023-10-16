@@ -1,8 +1,15 @@
 const swTheme = document.getElementById("switch");
+const font = document.querySelectorAll(".fm");
 function theme(e) {
   if (e.target.checked) {
+    for (let i = 0; i < font.length; i++) {
+      font[i].style.color = "white";
+    }
     document.body.style.backgroundColor = "#161625";
   } else {
+    for (let i = 0; i < font.length; i++) {
+      font[i].style.color = "black";
+    }
     document.body.style.backgroundColor = "white";
   }
 }

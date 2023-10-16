@@ -29,11 +29,15 @@
   font-family: "poppins-talic";
   src: url(asset/font/poppins-italic-webfont.woff) format("woff");
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "poppins";
+  min-height: 1000px;
 }
 header {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 80px;
   background-color: rgb(236, 236, 236);
@@ -42,6 +46,7 @@ header {
   align-items: center;
   padding: 0 1rem;
   box-shadow: 0px 2px 5px rgba(70, 64, 64, 0.548);
+  z-index: 99;
 }
 header h1 {
   color: rgba(241, 6, 6, 0.952);
@@ -215,7 +220,106 @@ header .light {
 header .tgl-clk {
   order: 1;
 }
+/* Main content */
 
+main article img {
+  width: 100%;
+  height: 400px;
+  margin-top: 3rem;
+}
+main .container {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-between;
+  margin-top: 2.3rem;
+}
+main .container .content {
+  width: 70%;
+}
+main .container .content h2 {
+  margin: 2rem;
+  font-family: "poppins-medium";
+  font-weight: 100;
+  font-size: 1.2rem;
+  position: relative;
+}
+main .container .content h2::after {
+  content: "";
+
+  position: absolute;
+  width: 4rem;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: rgba(243, 9, 9, 0.87);
+}
+main .container .content .artcl {
+  display: flex;
+  width: 100%;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+main .container .content .artcl section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f8f5f5;
+  box-shadow: 6px 6px 12px #d7d4d4, -6px -6px 12px #edeaea;
+}
+main .container .content .artcl section img {
+  width: 200px;
+  height: 100px;
+  margin: 0;
+}
+main .container .content .artcl section p {
+  font-size: 0.7rem;
+  color: rgb(255, 3, 3);
+  margin: 1rem 0;
+}
+main .container .content .artcl section h5 {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  width: 200px;
+}
+main .container aside {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+
+  align-items: center;
+}
+main .container aside .txt-aside {
+  display: flex;
+  gap: 10px;
+}
+main .container aside .txt-aside img {
+  width: 25px;
+}
+main .container aside .txt-aside h3 {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+}
+main .container aside img {
+  width: 300px;
+}
+main .container aside h4 {
+  text-indent: 1.4rem;
+  line-height: 1.2;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+main .container aside p {
+  text-indent: 1rem;
+  line-height: 1.1;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
 /* maedia queris */
 @media (max-width: 768px) {
   header h1 {
@@ -247,5 +351,37 @@ header .tgl-clk {
   }
   header .tgl-clk {
     display: flex;
+  }
+  /* main content */
+  main article img {
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+  }
+  main .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  main .container .content {
+    width: 100%;
+  }
+  main .container .content .artcl {
+    gap: 2rem;
+  }
+  main .container .content .artcl section {
+    flex-direction: row-reverse;
+  }
+  main .container .content .artcl section img {
+    width: 100px;
+    height: 80px;
+  }
+  main .container .content .artcl section p {
+    margin-bottom: 0.6rem;
+    margin-top: 0;
+  }
+  main .container aside {
+    width: 100%;
+    border-bottom: 2px solid rgb(71, 68, 68);
+    padding-bottom: 1rem;
   }
 }
