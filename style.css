@@ -46,7 +46,7 @@ header {
   align-items: center;
   padding: 0 1rem;
   box-shadow: 0px 2px 5px rgba(70, 64, 64, 0.548);
-  z-index: 99;
+  z-index: 9999;
 }
 header h1 {
   color: rgba(241, 6, 6, 0.952);
@@ -254,14 +254,19 @@ main .container .content h2::after {
   left: 0;
   background-color: rgba(243, 9, 9, 0.87);
 }
-main .container .content .artcl {
+main .container .content .artcl,
+.artcl2 {
   display: flex;
   width: 100%;
   gap: 2.5rem;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-main .container .content .artcl section {
+main .container .content .artcl2 {
+  display: none;
+}
+main .container .content .artcl section,
+.content .artcl2 section {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -270,20 +275,79 @@ main .container .content .artcl section {
   background: #f8f5f5;
   box-shadow: 6px 6px 12px #d7d4d4, -6px -6px 12px #edeaea;
 }
-main .container .content .artcl section img {
+a {
+  text-decoration: none;
+}
+main .container .content .artcl section a img,
+.artcl2 section a img {
   width: 200px;
   height: 100px;
   margin: 0;
 }
-main .container .content .artcl section p {
+main .container .content .artcl section p,
+.artcl2 section p {
   font-size: 0.7rem;
   color: rgb(255, 3, 3);
   margin: 1rem 0;
 }
-main .container .content .artcl section h5 {
+main .container .content .artcl section h5,
+.artcl2 section h5 {
   font-size: 0.9rem;
   line-height: 1.2;
   width: 200px;
+  color: black;
+}
+main .container .content .slice {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  /* margin-right: 5rem; */
+  margin-top: 2rem;
+}
+
+main .container .content .slice button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3d405b;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+main .container .content .slice button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+main .container .content .slice button:nth-child(1) {
+  display: none;
+}
+main .container .content .slice button .bt2::after {
+  content: "«";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -15px;
+  transition: 0.5s;
+}
+main .container .content .slice button .bt1:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+main .container .content .slice button:hover span:after {
+  opacity: 1;
 }
 main .container aside {
   margin-top: 3rem;
@@ -320,6 +384,75 @@ main .container aside p {
   font-size: 1rem;
   margin-top: 2rem;
 }
+main .container aside .button {
+  background-color: #ffffff00;
+  color: #020202;
+  width: 12.5em;
+  height: 2.9em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+  margin-top: 3rem;
+}
+
+main .container aside .button:hover {
+  background-color: #3654ff;
+  color: white;
+  cursor: pointer;
+}
+
+main .container aside .button svg {
+  width: 1.6em;
+  margin: -0.3em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+main .container aside .button:hover svg {
+  transform: translateX(5px);
+}
+
+main .container aside .button .text {
+  margin: 0 1.5em;
+  font-family: "poppins";
+}
+footer {
+  background-color: rgb(29, 73, 139);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+footer .socials {
+  padding: 1rem 0;
+}
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+  font-size: 24px;
+}
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+footer .links {
+  margin-bottom: 1.4rem;
+}
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+footer .credit {
+  font-size: 1rem;
+}
+footer .credit {
+  color: #86e696;
+  font-weight: 700;
+}
+footer .credit p a {
+  color: rgb(184, 247, 233);
+}
 /* maedia queris */
 @media (max-width: 768px) {
   header h1 {
@@ -337,17 +470,17 @@ main .container aside p {
   nav ul {
     flex-direction: column;
     position: absolute;
-    top: -100px;
-    left: 0;
-    right: 0;
+    top: 80px;
+    left: -1000px;
+    width: 100%;
     align-items: center;
     background-color: rgb(236, 236, 236);
     height: 90px;
-    transition: all 400ms;
+    transition: all 600ms;
     z-index: -1;
   }
   .slider {
-    top: 80px;
+    left: 0px;
   }
   header .tgl-clk {
     display: flex;
@@ -365,23 +498,45 @@ main .container aside p {
   main .container .content {
     width: 100%;
   }
-  main .container .content .artcl {
+  main .container .content .artcl,
+  .artcl2 {
     gap: 2rem;
+    justify-content: center;
   }
-  main .container .content .artcl section {
+
+  main .container .content .artcl section a,
+  .content .artcl2 section a {
+    display: flex;
     flex-direction: row-reverse;
   }
-  main .container .content .artcl section img {
+  main .container .content .artcl section a img,
+  .artcl2 section a img {
     width: 100px;
     height: 80px;
+    margin-left: 10px;
   }
-  main .container .content .artcl section p {
+  main .container .content .artcl section a p,
+  .artcl2 section a p {
     margin-bottom: 0.6rem;
     margin-top: 0;
+    font-size: 0.6rem;
+  }
+  main .container .content .artcl section h5,
+  .artcl2 section h5 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    width: 180px;
+    color: black;
   }
   main .container aside {
     width: 100%;
     border-bottom: 2px solid rgb(71, 68, 68);
     padding-bottom: 1rem;
+  }
+  footer {
+    font-size: 82.5%;
+  }
+  footer .credit p {
+    font-size: 0.8rem;
   }
 }

@@ -28,3 +28,20 @@ document.addEventListener("click", function (e) {
     toggle.checked = false;
   }
 });
+
+const tombol = document.querySelector(".btn1");
+const tombol2 = document.querySelector(".btn2");
+const article1 = document.querySelector(".artcl");
+const article2 = document.querySelector(".artcl2");
+tombol.addEventListener("click", function (e) {
+  article1.style.display = "none";
+  article2.style.display = "flex";
+  tombol2.style.display = "flex";
+  tombol.style.display = "none";
+});
+tombol2.addEventListener("click", function () {
+  article1.style.display = "flex";
+  article2.style.display = "none";
+  tombol2.style.display = "none";
+  tombol.style.display = "flex";
+});
