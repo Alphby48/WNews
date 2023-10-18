@@ -1,3 +1,4 @@
+//UNTUK TEMA
 const swTheme = document.getElementById("switch");
 const font = document.querySelectorAll(".fm");
 function theme(e) {
@@ -14,7 +15,7 @@ function theme(e) {
   }
 }
 swTheme.addEventListener("change", theme, false);
-
+// UNTUK NAVBAR
 const toggle = document.querySelector("#checkbox");
 const navbox = document.querySelector("nav ul");
 toggle.addEventListener("click", function (e) {
@@ -28,7 +29,7 @@ document.addEventListener("click", function (e) {
     toggle.checked = false;
   }
 });
-
+//UNTUK SLIDE BERITA
 const tombol = document.querySelector(".btn1");
 const tombol2 = document.querySelector(".btn2");
 const article1 = document.querySelector(".artcl");

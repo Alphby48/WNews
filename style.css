@@ -167,8 +167,6 @@ header .tgl-clk .toggle-bar .bar {
   transition: none 0.35s cubic-bezier(0.5, -0.35, 0.35, 1.5) 0s;
 }
 
-/***** Collapse Animation *****/
-
 header .tgl-clk .toggle-bar .bar--top {
   bottom: calc(40% + 11px + 4px / 2);
   transition-property: bottom, margin, transform;
@@ -418,42 +416,43 @@ main .container aside .button .text {
   margin: 0 1.5em;
   font-family: "poppins";
 }
+/* footer */
 footer {
   background-color: rgb(29, 73, 139);
   text-align: center;
   padding: 1rem 0 3rem;
   margin-top: 3rem;
 }
-footer .socials {
+footer .media-socials {
   padding: 1rem 0;
 }
-footer .socials a {
+footer .media-socials a {
   color: #fff;
   margin: 1rem;
   font-size: 24px;
 }
-footer .socials a:hover,
-footer .links a:hover {
-  color: var(--bg);
+footer .media-socials a:hover,
+footer .links-footbar a:hover {
+  color: rgb(14, 241, 25);
 }
-footer .links {
+footer .links-footbar {
   margin-bottom: 1.4rem;
 }
-footer .links a {
+footer .links-footbar a {
   color: #fff;
   padding: 0.7rem 1rem;
 }
-footer .credit {
+footer .label-name {
   font-size: 1rem;
 }
-footer .credit {
+footer .label-name {
   color: #86e696;
   font-weight: 700;
 }
-footer .credit p a {
+footer .label-name p a {
   color: rgb(184, 247, 233);
 }
-/* maedia queris */
+/* media queris */
 @media (max-width: 768px) {
   header h1 {
     margin-left: 2.5rem;
@@ -533,10 +532,11 @@ footer .credit p a {
     border-bottom: 2px solid rgb(71, 68, 68);
     padding-bottom: 1rem;
   }
+  /* footer */
   footer {
     font-size: 82.5%;
   }
-  footer .credit p {
+  footer .label-name p {
     font-size: 0.8rem;
   }
 }
